@@ -1,7 +1,6 @@
-ARG BASE=alpine:3.9
-FROM ${BASE}
+FROM alpine
 
-LABEL maintainer="Brian J. Cardiff <bcardiff@gmail.com>"
+LABEL maintainer="Pilbbq (previously, Brian J. Cardiff <bcardiff@gmail.com>)"
 
 ARG RCLONE_VERSION=current
 ARG ARCH=amd64
