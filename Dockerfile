@@ -13,8 +13,11 @@ ENV CRON_ABORT=
 ENV FORCE_SYNC=
 ENV CHECK_URL=
 ENV TZ=
+ENV CURL_TIMEOUT=5
+ENV CURL_MAXTIME=10
+ENV CURL_RETRIES=3
 
-RUN apk -U add ca-certificates fuse wget dcron tzdata \
+RUN apk -U add ca-certificates fuse wget curl dcron tzdata \
   && rm -rf /var/cache/apk/*
 
 RUN URL=http://downloads.rclone.org/${RCLONE_VERSION}/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip ; \
