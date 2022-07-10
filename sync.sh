@@ -25,7 +25,7 @@ else
           --connect-timeout $CURL_TIMEOUT \
           --max-time $CURL_MAXTIME \
           --retry $CURL_RETRIES \
-          -s $CHECK_URL/start
+          -qs $CHECK_URL/start
       echo "INFO: Starting rclone sync $SYNC_SRC $SYNC_DEST $RCLONE_OPTS $SYNC_OPTS"
       rclone sync $SYNC_SRC $SYNC_DEST $RCLONE_OPTS $SYNC_OPTS
       # Inform https://healthchecks.io that the job is over
@@ -33,7 +33,7 @@ else
           --connect-timeout $CURL_TIMEOUT \
           --max-time $CURL_MAXTIME \
           --retry $CURL_RETRIES \
-          -s $CHECK_URL
+          -qs $CHECK_URL
     fi
   else
     echo "WARNING: Source directory is empty. Skipping sync command."
