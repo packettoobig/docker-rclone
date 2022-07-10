@@ -25,7 +25,8 @@ else
           --connect-timeout $CURL_TIMEOUT \
           --max-time $CURL_MAXTIME \
           --retry $CURL_RETRIES \
-          -qs $CHECK_URL/start
+          -o /dev/null \
+          -s $CHECK_URL/start
       echo "INFO: Starting rclone sync $SYNC_SRC $SYNC_DEST $RCLONE_OPTS $SYNC_OPTS"
       rclone sync $SYNC_SRC $SYNC_DEST $RCLONE_OPTS $SYNC_OPTS
       # Inform https://healthchecks.io that the job is over
@@ -33,6 +34,7 @@ else
           --connect-timeout $CURL_TIMEOUT \
           --max-time $CURL_MAXTIME \
           --retry $CURL_RETRIES \
+          -o /dev/null \
           -qs $CHECK_URL
     fi
   else
