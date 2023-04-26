@@ -17,7 +17,7 @@ ENV CURL_TIMEOUT=5
 ENV CURL_MAXTIME=10
 ENV CURL_RETRIES=3
 
-RUN apk -U add ca-certificates fuse wget curl dcron tzdata \
+RUN apk -U add ca-certificates fuse wget curl dcron tzdata openssh \
   && rm -rf /var/cache/apk/*
 
 RUN URL=http://downloads.rclone.org/${RCLONE_VERSION}/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip ; \
